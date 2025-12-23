@@ -5,6 +5,21 @@ import * as THREE from 'three';
 import { useStore } from '../store';
 import { PhotoData } from '../types';
 
+// Fix: Augment JSX namespace to include React Three Fiber elements which are missing in the current type definition
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      group: any;
+      meshStandardMaterial: any;
+      pointLight: any;
+      points: any;
+      bufferGeometry: any;
+      bufferAttribute: any;
+      pointsMaterial: any;
+    }
+  }
+}
+
 // Helper to distribute points in a cone/tree shape
 const generateTreePositions = (count: number, radius: number, height: number) => {
   const positions = new Float32Array(count * 3);
