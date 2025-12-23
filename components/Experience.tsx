@@ -4,17 +4,6 @@ import { OrbitControls, Environment, Stars, Sparkles } from '@react-three/drei';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import TreeParticles from './TreeParticles';
 
-// Fix: Augment JSX namespace to include React Three Fiber elements which are missing in the current type definition
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      color: any;
-      ambientLight: any;
-      pointLight: any;
-    }
-  }
-}
-
 const Experience: React.FC = () => {
   return (
     <Canvas
